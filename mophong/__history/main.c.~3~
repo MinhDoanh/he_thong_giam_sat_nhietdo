@@ -1,0 +1,21 @@
+#include <main.h>
+
+void main()
+{
+   //khai bao bien cuc bo o day
+   unsigned int8 dh_nhiet_do,dh_nhiet_do2,dh_do_am,dh_do_am2;
+   unsigned int8 str[20];
+   
+   lcd_init();
+   lcd_putc('\f');
+   lcd_gotoxy(1,1);
+   printf(lcd_putc,"READING DHT11");
+   delay_ms(500);
+   delay_ms(500);
+   lcd_putc('\f');   
+
+   while(TRUE)
+   {
+      //TODO: User Code
+   }
+}

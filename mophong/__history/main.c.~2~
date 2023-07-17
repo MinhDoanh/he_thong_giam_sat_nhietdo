@@ -1,0 +1,11 @@
+#include <main.h>
+
+void main()
+{
+   //khai bao bien cuc bo o day
+
+   while(TRUE)
+   {
+      //TODO: User Code
+   }
+}

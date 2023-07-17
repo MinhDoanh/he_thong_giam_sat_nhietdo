@@ -1,0 +1,147 @@
+[PROJECT]
+Target=main.hex
+Processor_Text=PIC16F877A
+CCSVerions=5.101
+Compiler=PCM
+CCSVersion=5.101
+[Target Data]
+FileList=main.c
+[Directories]
+Include=
+[G:\Ki_5\da_3\code\main]
+Type=4
+[mru-list]
+1=main.c
+
+[fileformats]
+forcecoff=0
+
+[ProjectLog]
+Days=8
+D1=11-12-2022
+D1_L=16
+D1_L1=[36204]Project Opened.
+D1_L2=[36242]Started Editing.
+D1_L3=[36822]Stopped Editing.
+D1_L4=[36913]Started Editing.
+D1_L5=[37228]Stopped Editing.
+D1_L6=[37853]Started Editing.
+D1_L7=[39305]Stopped Editing.
+TotalEdit=130
+TotalDebug=0
+D1_E=46
+D1_D=0
+D1_L8=[41311]Project Closed.
+D1_L9=[54175]Project Opened.
+D1_L10=[54558]Started Editing.
+D1_L11=[54863]Stopped Editing.
+D1_L12=[55525]Project Closed.
+D1_L13=[72590]Project Opened.
+D1_L14=[72743]Started Editing.
+D1_L15=[74218]Stopped Editing.
+D1_L16=[77662]Project Closed.
+D2=12-12-2022
+D2_L=2
+D2_L1=[35483]Project Opened.
+D2_L2=[61601]Project Closed.
+D3=13-12-2022
+D3_L=6
+D3_L1=[58042]Project Opened.
+D3_L2=[58047]Project Closed.
+D3_L3=[58047]Project Opened.
+D3_L4=[58099]Started Editing.
+D3_L5=[58425]Stopped Editing.
+D3_E=1
+D3_D=0
+D3_L6=[61843]Project Closed.
+D4=17-12-2022
+D4_L=10
+D4_L1=[34378]Project Opened.
+D4_L2=[35135]Started Editing.
+D4_L3=[35435]Stopped Editing.
+D4_L4=[36740]Started Editing.
+D4_L5=[37594]Stopped Editing.
+D4_E=16
+D4_D=0
+D4_L6=[37594]Project Closed.
+D4_L7=[37630]Project Opened.
+D4_L8=[37660]Started Editing.
+D4_L9=[37962]Stopped Editing.
+D4_L10=[61475]Project Closed.
+D5=08-01-2023
+D5_L=3
+D5_L1=[67684]Project Opened.
+D5_L2=[67716]Started Editing.
+D5_L3=[68430]Stopped Editing.
+D6=09-01-2023
+D6_L=9
+D6_L1=[26276]Started Editing.
+D6_L2=[27076]Stopped Editing.
+D6_L3=[27125]Started Editing.
+D6_L4=[27425]Stopped Editing.
+D6_L5=[50888]Started Editing.
+D6_L6=[51261]Stopped Editing.
+D6_L7=[51294]Started Editing.
+D6_L8=[52150]Stopped Editing.
+D6_E=26
+D6_D=0
+D6_L9=[62370]Project Closed.
+D7=10-01-2023
+D7_L=20
+D7_L1=[56799]Project Opened.
+D7_L2=[56846]Started Editing.
+D7_L3=[57841]Stopped Editing.
+D7_L4=[58945]Started Editing.
+D7_L5=[59137]Stopped Editing.
+D7_E=24
+D7_D=0
+D7_L6=[59137]Project Closed.
+D7_L7=[73231]Project Opened.
+D7_L8=[73259]Started Editing.
+D7_L9=[73660]Stopped Editing.
+D7_L10=[73940]Started Editing.
+D7_L11=[74241]Stopped Editing.
+D7_L12=[74286]Started Editing.
+D7_L13=[74586]Stopped Editing.
+D7_L14=[75392]Started Editing.
+D7_L15=[75692]Stopped Editing.
+D7_L16=[84545]Started Editing.
+D7_L17=[85229]Stopped Editing.
+D7_L18=[85358]Project Closed.
+D7_L19=[86108]Project Opened.
+D7_L20=[86140]Started Editing.
+D8=11-01-2023
+D8_L=8
+D8_L1=[164]Stopped Editing.
+D8_E=17
+D8_D=0
+D8_L2=[8380]Project Closed.
+D8_L3=[42173]Project Opened.
+D8_L4=[42256]Started Editing.
+D8_L5=[43032]Stopped Editing.
+D8_L6=[49650]Started Editing.
+D8_L7=[50288]Stopped Editing.
+D8_L8=[52882]Project Closed.
+
+[Opened Files]
+1=main.c
+t1=1
+2=lcd.h
+t2=1
+Count=4
+3=DHT11.H
+t3=1
+4=main.h
+t4=1
+5=..\..\da_3 - Copy\code\main.c
+t5=72
+6=DHT11.H
+t6=1
+[main.c]
+Type=4
+
+[defines]
+buildcount=70
+[Units]
+Count=1
+1=main (main)

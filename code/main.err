@@ -1,0 +1,5 @@
+Compiling G:\Ki_5\da_3\code\main on 11-Thg1-23 at 13:47
+>>> Warning 216 "G:\Ki_5\da_3\code\main.c" Line 210(1,2): Interrupts disabled during call to prevent re-entrancy:  (@delay_ms3)
+      Memory usage:   ROM=21%      RAM=13% - 19%
+      0 Errors,  1 Warnings.
+Build Successful.

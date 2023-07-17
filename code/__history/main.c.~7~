@@ -1,0 +1,198 @@
+#include <main.h>
+#include <lcd.c>
+//-----------------------------------------------------------------------------
+char Option=0;
+unsigned int8 NhietDoMax=35,NhietDoMin=25,DoAmMax=85,DoAmMin=70;
+//-----------------------------------------------------------------------------
+#INT_RB
+void _NgatRB(void)
+{
+   if(MENU==0)
+   {
+      delay_ms(300);
+      //while(MENU==0);
+      //output_bit(TAI_1,1);
+      Option=Option+1;
+      if(Option>4)
+      {
+         Option=0;
+      }
+   }
+}
+//-----------------------------------------------------------------------------
+//-----------------------------------------------------------------------------
+void main()
+{
+   //khai bao bien cuc bo o day
+   unsigned int8 dh_nhiet_do,dh_nhiet_do2,dh_do_am,dh_do_am2;
+   unsigned int8 str[20];
+   
+   lcd_init();
+   lcd_putc('\f');
+   port_b_pullups(1);
+   enable_interrupts(INT_RB);
+   enable_interrupts(GLOBAL);
+   output_bit(TAI_1,0);
+   output_bit(TAI_2,0);
+   
+   lcd_gotoxy(1,1);
+   printf(lcd_putc,"READING DHT11");
+   delay_ms(500);
+   delay_ms(500);
+   lcd_putc('\f');   
+
+   while(TRUE)
+   {
+      //TODO: User Code
+      lcd_clear();
+      while(Option==0)
+      {
+         if(DHT_GetTemHumi(dh_nhiet_do,dh_nhiet_do2,dh_do_am,dh_do_am2))
+         {
+            sprintf(str,"DO AM:%u,%u",dh_do_am,dh_do_am2);         
+            lcd_gotoxy(1,1);
+            printf(lcd_putc,"%s",str);   
+            lcd_putc('%');
+            sprintf(str,"NHIET DO:%u,%u",dh_nhiet_do,dh_nhiet_do2);
+            lcd_gotoxy(1,2);
+            printf(lcd_putc,"%s",str);         
+            lcd_putc(223);
+         }
+         //delay_ms(500);    
+         lcd_line_3();
+         printf(lcd_putc,"ND.MAX:%02d, ND.MIN:%02d",NhietDoMax,NhietDoMin);
+         lcd_line_4();
+         printf(lcd_putc,"DA.MAX:%02d, DA.MIN:%02d",DoAmMax,DoAmMin);         
+         
+         if(dh_nhiet_do>=NhietDoMax && dh_do_am<=DoAmMin)
+         {
+            output_bit(TAI_1,1);
+            output_bit(TAI_2,1);
+         }
+         else if(dh_nhiet_do<=NhietDoMin && dh_do_am>=DoAmMax)
+         {
+            output_bit(TAI_1,0);
+            output_bit(TAI_2,0);            
+         }
+      }
+      
+//!      lcd_line_3();
+//!      printf(lcd_putc,"OP:%d",Option);
+      
+      lcd_clear();
+      while(Option==1)
+      {
+         lcd_line_1();
+         printf(lcd_putc,"CAI DAT NÐ MAX");
+         lcd_line_2();
+         printf(lcd_putc,"GIA TRI:%d",NhietDoMax);
+         
+         if(TANG==0)
+         {
+            while(TANG==0);
+            NhietDoMax=NhietDoMax+1;
+            if(NhietDoMax>50)
+            {
+               NhietDoMax=30;
+            }
+         }
+         else if(GIAM==0)
+         {
+            while(GIAM==0);
+            NhietDoMax=NhietDoMax-1;
+            if(NhietDoMax<10)
+            {
+               NhietDoMax=25;
+            }
+         }
+      }
+      
+      lcd_clear();
+      while(Option==2)
+      {
+         lcd_line_1();
+         printf(lcd_putc,"CAI DAT NÐ MIN");
+         lcd_line_2();
+         printf(lcd_putc,"GIA TRI:%d",NhietDoMin);
+         
+         if(TANG==0)
+         {
+            while(TANG==0);
+            NhietDoMin=NhietDoMin+1;
+            if(NhietDoMin>50)
+            {
+               NhietDoMin=30;
+            }
+         }
+         else if(GIAM==0)
+         {
+            while(GIAM==0);
+            NhietDoMin=NhietDoMin-1;
+            if(NhietDoMin<10)
+            {
+               NhietDoMin=25;
+            }
+         }
+      }      
+      
+      lcd_clear();
+      while(Option==3)
+      {
+         lcd_line_1();
+         printf(lcd_putc,"CAI DAT % MAX");
+         lcd_line_2();
+         printf(lcd_putc,"GIA TRI:%d",DoAmMax);
+         
+         if(TANG==0)
+         {
+            while(TANG==0);
+            DoAmMax=DoAmMax+1;
+            if(DoAmMax>99)
+            {
+               DoAmMax=70;
+            }
+         }
+         else if(GIAM==0)
+         {
+            while(GIAM==0);
+            DoAmMax=DoAmMax-1;
+            if(DoAmMax<50)
+            {
+               DoAmMax=80;
+            }
+         }
+      }          
+      
+      lcd_clear();
+      while(Option==4)
+      {
+         lcd_line_1();
+         printf(lcd_putc,"CAI DAT % MIN");
+         lcd_line_2();
+         printf(lcd_putc,"GIA TRI:%d",DoAmMin);
+         
+         if(TANG==0)
+         {
+            while(TANG==0);
+            DoAmMin=DoAmMin+1;
+            if(DoAmMin>99)
+            {
+               DoAmMin=70;
+            }
+         }
+         else if(GIAM==0)
+         {
+            while(GIAM==0);
+            DoAmMin=DoAmMin-1;
+            if(DoAmMin<50)
+            {
+               DoAmMin=80;
+            }
+         }
+      }       
+      
+   }
+}
+//-----------------------------------------------------------------------------
+//-----------------------------------------------------------------------------
+
